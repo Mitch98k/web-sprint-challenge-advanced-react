@@ -29,14 +29,44 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain how to build stateful class components.
+  Class components are built with the syntax [class (component name) extends React.component]
+  and under that you define state with either the constructor method and calling super, or 
+  using shorthand and just defining initial state as an object without the constructor method. 
+  From there you connect your state to all the elements of the component that need it 
+  and use this.setState to change the state when necesarry.
 
 2. Describe the different phases of the component lifecycle.
+   The first phase of the component lifecycle is the mounting phase,
+   which is where your initial data is rendered. The second phase is 
+   the updating phase, where any updates to the inital data are handled.
+   The third and last phase is the unmounting phase, where the life cycle 
+   'dies' and functions that we don't want to continue running are unmounted 
+   so they don't use up more memory.
 
 3. Demonstrate an understanding of class component lifecycle methods.
+    The common three lifecycle methods are componentDidMount, componentDidUpdate,
+    and componentWillUnmount. The first is used for data recieved asyncronously 
+    or after the initial render like an axios call. The second is for making 
+    things happen when the component updates. Unlike the first, this is called
+    every time the component updates instead of just once after the render.
+    The third is for the end of the lifecycle when the component is no longer
+    being used. We want to unmount the component so it doesn't take up memory when 
+    not in use.
 
 4. Define stateful logic.
+   Stateful logic is any logic or code that deals with state.
+   anything that updates or initializes state is concidered stateful logic.
 
 5. Describe how to test a React component with React Testing Library.
+    To test a React component with React Testing Library, you first need to 
+    create a testing file and import the testing dependencies and component you
+    are testing into it. Then you use the 'test()' keyword and inside the parenthesies
+    describe your test in a string and create an anonymous function. From there you render 
+    the component, get any elements in the component you need, fire user events if needed, and assert 
+    what you expect to happen.
+    These steps constitute the Arrange, Act, Assert method. You arrange the test, you act via user events, 
+    and you assert that what you expect to happen will happen. It is also important to intentionaly fail your
+    tests at one point to make sure the test isn't just passing no matter what.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
